@@ -1,0 +1,12 @@
+#currency-page-layout{
+}
+#crypto-main-content{
+    display: flex;
+    margin-left: 3rem;
+
+}
+#crypto-title-name{
+    /* border:  solid 1px red; */
+ padding: 1.2rem;   
+ margin-left:1.8rem;
+}
