@@ -61,9 +61,11 @@
 #trending-top3-coins-show {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  padding-left: 1.5rem;
+  justify-content: space-between;
+  /* padding-left: 1.5rem; */
   padding-top: 1.3rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 #image-layout-top3-coins {
@@ -81,5 +83,5 @@
   padding-left: 1.5rem;
 }
 #top3-coin-perf-24 {
-  margin-left: 11rem;
+  /* margin-left: 11rem; */
 }

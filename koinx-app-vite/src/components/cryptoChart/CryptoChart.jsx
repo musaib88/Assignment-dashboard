@@ -92,7 +92,7 @@ export default function CryptoChart({ data }) {
             ) : (
               <i className="fa-solid fa-caret-down"></i>
             )}
-            {coinDetails.coinPriceChange_24}%{" "}
+            {Math.abs(coinDetails.coinPriceChange_24).toFixed(2)}%{" "}
           </span>
           <span id="coin-24-status">(24H)</span>
           <span id="coin-price-inr">&#8377;{coinDetails.coinInrPrice}</span>

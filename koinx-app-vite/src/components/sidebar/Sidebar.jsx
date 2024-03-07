@@ -3,7 +3,7 @@ import './sidebar.css'
 import bannerImg from '../../util/bannerAd.png'
 import coinImg from '../../util/Bitcoin.svg.png'
 export default function Sidebar({coins}) {
- const top3 = coins && coins.length > 0 ? coins.slice(0, 3) : [];
+ const top3 = coins && coins.length > 0 ? coins.slice(0, 4) : [];
   const style = {
     priceUp: { backgroundColor: "#EBF9F4", color: "green" },
     priceDown: { backgroundColor: "#f4e5e1", color: "red" },
@@ -50,7 +50,7 @@ console.log(mappedData,'jjj')
           mappedData.map((coin,index)=>(
             <div key={index} id='trending-top3-coins-show'>
               <div style={{display:'flex', alignItems:'center',justifyContent:'center',gap:'0.5rem'}}><div id='image-layout-top3-coins'> <img src={coin.thumb} alt="" /></div>
-             <span id='coin-name-top3'> {coin.name}(coin.symbol)</span>
+             <span id='coin-name-top3'> {coin.name}({coin.symbol})</span>
              </div>
              <span id='top3-coin-perf-24' style={ coin.priceChangePercentage24h.usd>0?style.priceUp:style.priceDown}> {coin.priceChangePercentage24h.usd >=0 ? <i className="fa-solid fa-caret-up"></i>: <i className="fa-solid fa-caret-down"></i>} {`${Math.abs(coin.priceChangePercentage24h.usd).toFixed(2)}%`}</span>
 
