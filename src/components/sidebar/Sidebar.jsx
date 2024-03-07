@@ -27,7 +27,7 @@ console.log(coins)
           <div id='trending-3-top-title'><span>Trending Coins (24h)</span></div>
            <div id='trending-top3-coins-show'>
               <div id='image-layout-top3-coins'> <img src={coinImg} alt="" /></div>
-             <span id='coin-name-top3'> Ethererum (ETH)</span>
+             <span id='coin-name-top3'> Ethererum(ETH)</span>
              <span id='top3-coin-perf-24'> <i className="fa-solid fa-caret-up"></i>5.6%</span>
              
 
