@@ -1,0 +1,82 @@
+#crypto-Details-layout {
+  padding: 1.5rem;
+  /* border: 1px solid red; */
+  margin-top: 1.5rem;
+  background-color: #fefeff;
+  border-radius: 5px;
+  padding-bottom: 2.5rem;
+}
+#perfor-heading {
+  font-size: 24px;
+  font-weight: 600;
+}
+.performance-level-color {
+  position: relative;
+  /* border: solid 1px red; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+  /* padding: 0rem 0rem 1.2rem 0rem; */
+}
+.perfor-labels {
+  /* border: solid 1px red; */
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.label-name-perfor {
+  font-size: 15px;
+  font-weight: 450;
+  color: rgb(81, 79, 79);
+}
+.label-price-perfor {
+  font-size: 18px;
+  font-weight: 500;
+  color: rgb(67, 61, 61);
+}
+.color-level-performance {
+  position: absolute;
+  width: 70%;
+  height: 0.3rem;
+
+  background: linear-gradient(
+    to right,
+    #f42c2c,
+    #e74c3c,
+    #e7b13c,
+    #f39c12,
+    #2ecc71,
+    #12ea6c
+  );
+  border-radius: 10px;
+  left: 15%;
+}
+#fundamentals-layout {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+}
+#fundamentals-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+#fundamentals-grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+.grid-item-fundamental {
+  /* border: 1px solid #8a2727; */
+  padding: 10px;
+  text-align: center;
+  border-bottom: solid 1.5px #d0d0dc;
+}
+.item-grid-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
