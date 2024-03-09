@@ -80,3 +80,17 @@
   align-items: center;
   justify-content: space-between;
 }
+.grid-item-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: grey;
+}
+.grid-item-value {
+  font-size: 14px;
+  font-weight: 600;
+}
+.info-icon {
+  margin-left: 0.3rem;
+  color: #9a9a9e;
+  font-size: medium;
+}

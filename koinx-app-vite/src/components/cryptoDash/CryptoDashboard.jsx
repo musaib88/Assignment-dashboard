@@ -3,6 +3,8 @@ import "./cryptoDashboard.css";
 import CryptoChart from "../cryptoChart/CryptoChart";
 import axios from "axios";
 import CryptoDetails from "../cryptoPerformance/CryptoDetails";
+import CryptoSentiments from "../cryptoSentiments/CryptoSentiments";
+import AboutCrypto from "../about/AboutCrypto";
 
 const apiKey = "CG-NSh22jyTDy2EU9gxhsKaNcUa";
 const BaseUrl = "https://api.coingecko.com/api/v3";
@@ -81,12 +83,8 @@ export default function CryptoDashboard() {
         </span>
       </div>
       <CryptoDetails></CryptoDetails>
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
-        delectus odit suscipit necessitatibus libero, exercitationem repellendus
-        provident est repudiandae, aspernatur dolorem, tempora corrupti aliquam
-        distinctio dolor. Sit magnam aut dolore.
-      </div>
+      <CryptoSentiments></CryptoSentiments>
+      <AboutCrypto></AboutCrypto>
     </div>
   );
 }

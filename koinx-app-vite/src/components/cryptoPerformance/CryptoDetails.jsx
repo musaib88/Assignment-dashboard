@@ -53,67 +53,70 @@ export default function CryptoDetails() {
       </div>
 
       <div id="fundamentals-layout"></div>
-      <span id="fundamentals-title">Fundamentals</span>
+      <span id="fundamentals-title">
+        Fundamentals
+        <i className="fa-solid fa-circle-info  info-icon"></i>
+      </span>
 
       <div id="fundamentals-grid-container">
         <div className="grid-item-fundamental">
           <div className="item-grid-details">
-            <span>Bitcoin Price</span>
-            <span>$79,7890</span>
+            <span className="grid-item-name">Bitcoin Price</span>
+            <span className="grid-item-value">$79,7890</span>
           </div>
         </div>
         <div className="grid-item-fundamental">
           <div className="item-grid-details">
-            <span>Market Cap</span>
-            <span>$79,7898660</span>
+            <span className="grid-item-name">Market Cap</span>
+            <span className="grid-item-value">$79,7898660</span>
           </div>
         </div>
         <div className="grid-item-fundamental">
           <div className="item-grid-details">
-            <span>24h Low / 24h High</span>
-            <span>$79,7890 / $89,89930</span>
+            <span className="grid-item-name">24h Low / 24h High</span>
+            <span className="grid-item-value">$79,7890 / $89,89930</span>
           </div>
         </div>
         <div className="grid-item-fundamental">
           <div className="item-grid-details">
-            <span>Market Cap Dominance</span>
-            <span>30.5535%</span>
+            <span className="grid-item-name">Market Cap Dominance</span>
+            <span className="grid-item-value">30.5535%</span>
           </div>
         </div>
         <div className="grid-item-fundamental">
           <div className="item-grid-details">
-            <span>7d Low / 7d High</span>
-            <span>$79,7890 / $89,89930</span>
+            <span className="grid-item-name">7d Low / 7d High</span>
+            <span className="grid-item-value">$79,7890 / $89,89930</span>
           </div>
         </div>
         <div className="grid-item-fundamental">
           <div className="item-grid-details">
-            <span>Volume / Market Cap</span>
-            <span>0.0778</span>
+            <span className="grid-item-name">Volume / Market Cap</span>
+            <span className="grid-item-value">0.0778</span>
           </div>
         </div>
         <div className="grid-item-fundamental">
           <div className="item-grid-details">
-            <span>Trading Volume</span>
-            <span>$79,789427470</span>
+            <span className="grid-item-name">Trading Volume</span>
+            <span className="grid-item-value">$79,789427470</span>
           </div>
         </div>
         <div className="grid-item-fundamental">
           <div className="item-grid-details">
-            <span>All Time High</span>
-            <span>$79,7890</span>
+            <span className="grid-item-name">All Time High</span>
+            <span className="grid-item-value">$79,7890</span>
           </div>
         </div>
         <div className="grid-item-fundamental">
           <div className="item-grid-details">
-            <span>Market Cap Rank</span>
-            <span>#1</span>
+            <span className="grid-item-name">Market Cap Rank</span>
+            <span className="grid-item-value">#1</span>
           </div>
         </div>
         <div className="grid-item-fundamental">
           <div className="item-grid-details">
-            <span>All Time Low</span>
-            <span>$67</span>
+            <span className="grid-item-name">All Time Low</span>
+            <span className="grid-item-value">$67</span>
           </div>
         </div>
       </div>
