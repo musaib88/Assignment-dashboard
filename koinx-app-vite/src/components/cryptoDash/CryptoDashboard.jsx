@@ -5,6 +5,8 @@ import axios from "axios";
 import CryptoDetails from "../cryptoPerformance/CryptoDetails";
 import CryptoSentiments from "../cryptoSentiments/CryptoSentiments";
 import AboutCrypto from "../about/AboutCrypto";
+import Tokenomics from "../tokenomics/Tokenomics";
+import Team from "../Team/Team";
 
 const apiKey = "CG-NSh22jyTDy2EU9gxhsKaNcUa";
 const BaseUrl = "https://api.coingecko.com/api/v3";
@@ -85,6 +87,8 @@ export default function CryptoDashboard() {
       <CryptoDetails></CryptoDetails>
       <CryptoSentiments></CryptoSentiments>
       <AboutCrypto></AboutCrypto>
+      <Tokenomics croudsale={80} foundation={20}></Tokenomics>
+      <Team></Team>
     </div>
   );
 }
