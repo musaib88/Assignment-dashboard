@@ -11,14 +11,14 @@ import Team from "../Team/Team";
 const apiKey = "CG-NSh22jyTDy2EU9gxhsKaNcUa";
 const BaseUrl = "https://api.coingecko.com/api/v3";
 
-export default function CryptoDashboard() {
+export default function CryptoDashboard({ coinName }) {
   const [activeSpan, setActiveSpan] = useState(1);
   const [coinData, setCoinData] = useState({});
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${BaseUrl}/coins/bitcoin`, {
+        const response = await axios.get(`${BaseUrl}/coins/${coinName}`, {
           params: {
             x_cg_demo_api_key: apiKey,
           },
