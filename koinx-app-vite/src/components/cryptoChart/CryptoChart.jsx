@@ -1,12 +1,9 @@
-import React, { useEffect, useState } from "react";
 import "./cryptoChart.css";
-import axios from "axios";
 import TradingViewWidget from "../TradingViewWidget";
+import { useState, memo, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
-const apiKey = "CG-NSh22jyTDy2EU9gxhsKaNcUa"; // Replace with your actual API key
-const BaseUrl = "https://api.coingecko.com/api/v3";
-
-export default function CryptoChart({ data }) {
+function CryptoChart({ data }) {
   const coinDetails = {
     imgurl: data?.image?.large || "",
     coinName: data?.name || "",
@@ -15,53 +12,24 @@ export default function CryptoChart({ data }) {
     coinUsdPrice: data?.market_data?.current_price?.usd || "",
     coinInrPrice: data?.market_data?.current_price?.inr || "",
     coinPriceChange_24: data?.market_data?.price_change_percentage_24h || 0,
-    
   };
-  const [coinHistory, setCoinHistory] = useState({});
-  const currentDate = new Date();
 
-  const day = String(currentDate.getDate()).padStart(2, "0");
-  const month = String(currentDate.getMonth() + 1).padStart(2, "0"); // Months are zero-based, so add 1
-  const year = currentDate.getFullYear();
-
-  // Format the date with leading zeros if needed
-  const formattedDate = `${day}-${month}-${year}`;
-
-  console.log(formattedDate);
-  const chartSymbol=`BITSTAMP:${coinDetails.symbol.toUpperCase()}USD`
-  console.log(chartSymbol)
+  const [coinSymbol, setCoinSymbol] = useState("btc");
+  const { bitcoin = "bitcoin" } = useParams();
+  const coinName = bitcoin.slice(1);
+  const changeSymbol = () => {
+    setCoinSymbol(coinDetails.symbol);
+    console.log(coinDetails.symbol,"in use efft")
+  };
+  // const path=usePram()
+  
 
 
+  useEffect(()=>{
+    changeSymbol()
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          `${BaseUrl}/coins/bitcoin/history`,
-          {
-            params: {
-              date: formattedDate,
-              localization: false,
-            },
-            headers: {
-              "Content-Type": "application/json",
-              "X-CoinGecko-Api-Key": apiKey,
-            },
-          }
-        );
-        setCoinHistory(response.data);
-        console.log(response.data, "history");
-      } catch (error) {
-        console.error("Error fetching cryptocurrency data:", error);
-        console.error("Response status:", error.response?.status);
-        console.error("Response data:", error.response?.data);
-      }
-    };
 
-    fetchData();
-  }, [formattedDate]);
-
-  console.log(coinHistory);
+  },[coinName])
 
   const style = {
     priceUp: { backgroundColor: "#EBF9F4", color: "green" },
@@ -77,14 +45,12 @@ export default function CryptoChart({ data }) {
           <span id="coin-Symbol">{coinDetails.symbol}</span>
           <span id="coin-rank">Rank #{coinDetails.coinRank}</span>
         </div>
-        <div className="coin-details-elements " id="coin-price-d">
+        <div className="coin-details-elements" id="coin-price-d">
           <span id="coin-price-usd">${coinDetails.coinUsdPrice}</span>
           <span
             id="coin-price-performance"
             style={
-              coinDetails.coinPriceChange_24 >= 0
-                ? style.priceUp
-                : style.priceDown
+              coinDetails.coinPriceChange_24 >= 0 ? style.priceUp : style.priceDown
             }
           >
             {coinDetails.coinPriceChange_24 > 0 ? (
@@ -105,22 +71,14 @@ export default function CryptoChart({ data }) {
               {coinDetails.coinName} Price Chart(USD)
             </span>
           </div>
-          {/* <div id="chart-price-timeseries">
-            <span>1H</span>
-            <span>24H</span>
-            <span>7D</span>
-            <span>1M</span>
-            <span>3M</span>
-            <span>6M</span>
-            <span>1Y</span>
-            <span>All</span>
-          </div> */}
         </div>
         <div id="chart">
-          <TradingViewWidget symbol={chartSymbol}></TradingViewWidget>
+          {console.log("Symbol in CryptoChart:", coinSymbol)}
+          <TradingViewWidget symbol={coinSymbol} />
         </div>
       </div>
-
     </div>
   );
 }
+
+export default memo(CryptoChart);

@@ -14,7 +14,9 @@ const BaseUrl = "https://api.coingecko.com/api/v3";
 export default function CryptoDashboard({ coinName }) {
   const [activeSpan, setActiveSpan] = useState(1);
   const [coinData, setCoinData] = useState({});
+  
 
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -31,7 +33,7 @@ export default function CryptoDashboard({ coinName }) {
     };
 
     fetchData();
-  }, []);
+  }, [coinName]);
 
   const handleActiveSpan = (index) => {
     setActiveSpan(index);
@@ -39,7 +41,7 @@ export default function CryptoDashboard({ coinName }) {
 
   return (
     <div id="dash-main-layout">
-      <CryptoChart data={coinData}></CryptoChart>
+      <CryptoChart data={coinData}  ></CryptoChart>
       <div id="dashboard-navigator">
         <span
           style={activeSpan === 1 ? { ...styles.activeStyle } : {}}
