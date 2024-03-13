@@ -85,3 +85,8 @@
 #top3-coin-perf-24 {
   /* margin-left: 11rem; */
 }
+@media only screen and (max-width: 768px) {
+  #sidebar-layout {
+    display: none;
+  }
+}

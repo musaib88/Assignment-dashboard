@@ -1,4 +1,5 @@
 #currency-page-layout {
+  overflow: hidden;
 }
 #crypto-main-content {
   display: flex;
