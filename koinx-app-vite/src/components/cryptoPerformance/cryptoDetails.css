@@ -95,3 +95,12 @@
   color: #9a9a9e;
   font-size: medium;
 }
+
+#performance_currentprice_label {
+  position: "absolute";
+  display: "flex";
+  align-items: "center";
+  flex-direction: "column";
+  justify-content: "center";
+  left: 50%;
+}
