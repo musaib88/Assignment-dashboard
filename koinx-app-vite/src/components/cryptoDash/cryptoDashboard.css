@@ -9,17 +9,17 @@
   display: flex;
   align-items: center;
   justify-content: start;
-  gap: 2rem;
-  margin-top: 1rem;
+  gap: 1vw;
+  margin-top: 3vh;
   border-bottom: 0.7px solid rgb(212, 201, 201);
 }
 
 #dashboard-navigator > span {
   /* border: 1px solid red; */
-  padding: 0.9rem;
+  padding: 2vh;
   font-weight: 600;
   color: rgb(56, 54, 54);
-  font-size: 17px;
+  font-size: 1.2vw;
   padding-bottom: 2rem;
   border-bottom: 3px solid transparent; /* Initial transparent border */
   transition: border-color 0.3s ease, color 0.3s ease; /* Smooth transition */
@@ -27,4 +27,10 @@
 
 #dashboard-navigator > span:hover {
   color: rgb(66, 58, 233);
+}
+
+@media only screen and (max-width: 768px) {
+  #dashboard-navigator > span {
+    font-size: 3vw;
+  }
 }

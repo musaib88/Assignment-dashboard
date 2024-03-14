@@ -2,7 +2,7 @@
   margin-top: 1.5rem;
   background-color: #fefeff;
   border-radius: 10px;
-  padding: 1.5rem;
+  padding: 0.5rem;
   overflow: hidden;
   /* border: solid 1px red; */
   width: 100%;
@@ -25,6 +25,7 @@
   font-size: 17px;
   color: rgb(67, 65, 65);
   font-weight: 500;
+  text-align: justify;
 }
 .about-crypto-info {
   margin-top: 1.5rem;
@@ -37,6 +38,7 @@
 }
 .about-crypto-info > p {
   font-size: 17px;
+  text-align: justify;
   color: rgb(67, 65, 65);
   font-weight: 500;
   /* white-space: pre-line; */
@@ -49,7 +51,7 @@
   font-weight: 600;
 }
 #tax-profit-box-container {
-  /* border: solid 1px rgb(125, 188, 104); */
+  /* border: solid 1px rgb(188, 104, 125); */
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -58,6 +60,7 @@
   margin-top: 1.5rem;
   padding-bottom: 1rem;
   border-bottom: solid 0.1px rgb(202, 192, 192);
+  height: fit-content;
 }
 .crypto-about-img {
   width: 130px;
@@ -71,7 +74,6 @@
 }
 #calculate-profit {
   /* border: solid 1px red; */
-  height: 127px;
   display: flex;
   width: 44%;
 
@@ -84,7 +86,6 @@
 
 #calculate-tax {
   /* border: solid 1px red; */
-  height: 127px;
   width: 44%;
 
   display: flex;
@@ -115,4 +116,16 @@
 
 .arrow-icon {
   margin-left: 0.3rem;
+}
+@media only screen and (max-width: 768px) {
+  #tax-profit-box-container {
+    flex-direction: column;
+    width: 22rem;
+  }
+  #calculate-tax {
+    width: 90%;
+  }
+  #calculate-profit {
+    width: 90%;
+  }
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./cryptosentiments.css";
 import Slider from "react-slick";
 
@@ -9,6 +9,7 @@ export default function CryptoSentiments() {
   const [buyPer, setBuyPer] = useState(55);
   const [sellPer, setSellPer] = useState(35);
   const [holdPer, setHoldPer] = useState(15);
+  const [slidesToShow, setSlidesToShow] = useState(2); // Default value for slidesToShow
 
   const CustomNextArrow = ({ onClick }) => (
     <div className="custom-arrow-next" onClick={onClick}>
@@ -16,24 +17,48 @@ export default function CryptoSentiments() {
     </div>
   );
 
-  //   const CustomPrevArrow = ({ onClick }) => (
-  //     <div className="custom-arrow-prev" onClick={onClick}>
-  //       <i class="fa-solid fa-angle-left"></i>
-  //     </div>
-  //   );
   const settings = {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 2,
+    slidesToShow: slidesToShow,
     slidesToScroll: 1,
     nextArrow: <CustomNextArrow />,
   };
+
+  useEffect(() => {
+    // Function to update slidesToShow based on screen width
+    const updateSlidesToShow = () => {
+      if (window.innerWidth <= 850) {
+        setSlidesToShow(1); // Show only one slide on mobile (screen width <= 850px)
+      } else {
+        setSlidesToShow(2); // Show two slides on larger screens
+      }
+    };
+
+    // Initial call to set slidesToShow based on the current screen width
+    updateSlidesToShow();
+
+    // Event listener to update slidesToShow when the screen is resized
+    window.addEventListener("resize", updateSlidesToShow);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", updateSlidesToShow);
+    };
+  }, []); // Empty dependency array ensures this effect runs only once on mount
+
   const style = {
-    buyEstimate: { width: `${buyPer}%`, backgroundColor: "#12E193" },
-    sellEstimate: { width: `${sellPer}%`, backgroundColor: "#F75D59" },
-    holdEstimate: { width: `${holdPer}%`, backgroundColor: "#8A9D96" },
+    buyEstimate: { width: `${buyPer * 2}%`, backgroundColor: "#12E193" },
+    sellEstimate: { width: `${sellPer * 2}%`, backgroundColor: "#F75D59" },
+    holdEstimate: { width: `${holdPer * 2}%`, backgroundColor: "#8A9D96" },
   };
+  const style2 = {
+    buyEstimate: { width: `${buyPer / 2}%`, backgroundColor: "#12E193" },
+    sellEstimate: { width: `${sellPer / 2}%`, backgroundColor: "#F75D59" },
+    holdEstimate: { width: `${holdPer / 2}%`, backgroundColor: "#8A9D96" },
+  };
+
   return (
     <div id="sentiment-layout-crypto">
       <span id="sentiment-title"> Sentiment</span>
@@ -101,12 +126,16 @@ export default function CryptoSentiments() {
           </div>
           <div id="estimate-color-level">
             <div className="estimate-color-line">
-              <div style={{ width: "4rem" }}>
+              <div>
                 <span className="estimate-label">Buy</span>
               </div>
               <div
                 className="estimate-color-width"
-                style={style.buyEstimate}
+                style={
+                  window.innerWidth <= 850
+                    ? style2.buyEstimate
+                    : style.buyEstimate
+                }
               ></div>
               <span className="estimate-label-per">
                 {buyPer}
@@ -114,12 +143,16 @@ export default function CryptoSentiments() {
               </span>
             </div>
             <div className="estimate-color-line">
-              <div style={{ width: "4rem" }}>
+              <div>
                 <span className="estimate-label">Hold</span>
               </div>{" "}
               <div
                 className="estimate-color-width"
-                style={style.holdEstimate}
+                style={
+                  window.innerWidth <= 850
+                    ? style2.holdEstimate
+                    : style.holdEstimate
+                }
               ></div>
               <span className="estimate-label-per">
                 {holdPer}
@@ -127,12 +160,16 @@ export default function CryptoSentiments() {
               </span>
             </div>
             <div className="estimate-color-line">
-              <div style={{ width: "4rem" }}>
+              <div>
                 <span className="estimate-label">sell</span>
               </div>
               <div
                 className="estimate-color-width"
-                style={style.sellEstimate}
+                style={
+                  window.innerWidth <= 850
+                    ? style2.sellEstimate
+                    : style.sellEstimate
+                }
               ></div>
               <span className="estimate-label-per">
                 {sellPer}

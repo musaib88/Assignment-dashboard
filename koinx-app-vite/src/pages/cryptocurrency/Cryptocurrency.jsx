@@ -60,6 +60,7 @@ export default function Cryptocurrency() {
           coins={trending.coins}
         ></Trending>
       </div>
+      <Sidebar></Sidebar>
     </div>
   );
 }

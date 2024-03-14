@@ -29,8 +29,8 @@ export default function Trending({ trendingTitle, coins }) {
             src={coin.item.thumb}
             alt=""
             style={{
-              width: "1.7rem",
-              height: "1.7rem",
+              width: "1.3rem",
+              height: "1.3rem",
               objectFit: "cover",
             }}
           />
@@ -92,7 +92,7 @@ export default function Trending({ trendingTitle, coins }) {
 
   return (
     <div id="trending-layout">
-      <div style={{ padding: "0rem 3.5rem 0rem 3.5rem" }}>
+      <div id="crousel-outer-item-wrapper">
         <span id="trendingtitle">{trendingTitle}</span>
         <div id="trending-Crousel-container">
           <Slider {...settings} className="trending-crousel">

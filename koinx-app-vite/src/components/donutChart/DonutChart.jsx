@@ -1,20 +1,41 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
-
+let size;
+let fontsz;
 export default function DonutChart({ croudFund, foundationFund }) {
+  const [size, setSize] = useState("250");
+  const [fontsz, setFontsz] = useState("14px");
+  const [spacing, setspacing] = useState([0, 0, 0, -30]);
+  const [x, setX] = useState(42);
+
+  useEffect(() => {
+    const updateSize = () => {
+      setSize(window.innerWidth <= 768 ? "200" : "250");
+      setFontsz(window.innerWidth <= 768 ? "12px" : "14px");
+      setspacing(window.innerWidth <= 768 ? [0, 0, 0, -20] : [0, 0, 0, -30]);
+      setX(34);
+    };
+
+    window.addEventListener("resize", updateSize);
+
+    // Cleanup function to remove the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("resize", updateSize);
+    };
+  }, []); // Empty dependency array means this effect will only run once after the initial render
   const options = {
     chart: {
       type: "pie",
-      height: "250px",
-      spacing: [0, 0, 0, -30],
+      height: size,
+      spacing: spacing,
     },
     title: {
       text: "Initial Distribution",
       verticalAlign: "top",
       align: "middle",
       y: 25,
-      x: 42,
+      x: x,
     },
     plotOptions: {
       pie: {
@@ -27,11 +48,13 @@ export default function DonutChart({ croudFund, foundationFund }) {
     },
     legend: {
       layout: "vertical",
+
       align: "right",
       verticalAlign: "middle",
       itemStyle: {
-        fontSize: "16px",
+        fontSize: fontsz,
       },
+
       labelFormat: "{name}: {percentage:.f}%",
     },
     credits: {

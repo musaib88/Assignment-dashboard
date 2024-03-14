@@ -2,7 +2,7 @@
   background-color: #fefeff;
   width: 100%;
   overflow: hidden;
-  /* margin-top: 1.5rem; */
+  /* border: solid 1px rgb(4, 255, 0); */
 }
 #trendingtitle {
   font-size: 25px;
@@ -12,20 +12,26 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  /* border: solid 1px rgb(30, 0, 255); */
+  /* border: solid 1px rgb(9, 255, 0); */
   align-items: center;
 }
 .trending-crousal-item {
+  /* border: solid 1px rgb(47, 0, 255); */
+
   border: solid 1px rgb(221, 217, 217);
   width: 260px;
   height: 170px;
   border-radius: 10px;
+  overflow: hidden;
 }
 
 .trending-crousel {
   width: 100%;
+  /* border: solid 1px rgb(195, 193, 213); */
 }
 .coin-top-crousel {
+  /* border: solid 1px rgb(30, 0, 255); */
+
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -33,6 +39,8 @@
   gap: 0.4rem;
 }
 #coin-price-trend-crousel {
+  /* border: solid 1px rgb(30, 0, 255); */
+
   padding-left: 1rem;
   font-size: 23px;
   font-weight: 600;
@@ -72,4 +80,44 @@
   font-size: 1rem;
   background-color: rgb(233, 238, 239);
   border-radius: 10px;
+}
+#crousel-outer-item-wrapper {
+  padding: 0rem 3.5rem;
+}
+
+@media only screen and (max-width: 448px) {
+  #trendingtitle {
+    font-size: 18px;
+  }
+  #crousel-outer-item-wrapper {
+    padding: 0rem 0.5rem;
+  }
+  .trending-crousal-item {
+    width: 175px;
+    height: 140px;
+  }
+
+  #coin-price-trend-crousel {
+    font-size: 14px;
+  }
+  #coin-symbol-sparkline {
+    font-size: 13px;
+  }
+
+  #coin-24-performence-trend {
+    font-size: 10px;
+  }
+  #coin-spark-line {
+    /* border: solid 1px red; */
+    height: 76px;
+    width: 110px;
+    margin-left: 2rem;
+  }
+  .custom-arrow-prev-ftt {
+    margin-left: 0%;
+    bottom: 60%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
 }

@@ -3,9 +3,14 @@ import React, { useEffect, useRef, memo } from "react";
 function TradingViewWidget({ symbol }) {
   const container = useRef();
   const chartSymbol = `BINANCE:${symbol.toUpperCase()}USDT|1D`;
+  console.log(chartSymbol);
 
   useEffect(() => {
     const script = document.createElement("script");
+    if (container.current.children.length > 0) {
+      // If container already has a child, remove it
+      container.current.removeChild(container.current.firstChild);
+    }
     script.src =
       "https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js";
     script.type = "text/javascript";

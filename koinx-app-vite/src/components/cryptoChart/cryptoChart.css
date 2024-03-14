@@ -1,8 +1,8 @@
 #crypto-chart-layout {
   width: 100%;
   height: fit-content;
-  background-color: #fefeff;
   border-radius: 10px;
+  /* border: solid 1px red; */
 }
 #coin-logo {
   width: 2.3rem;
@@ -15,7 +15,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-start;
-  padding-top: 1.3rem;
+  padding-top: 1vw;
 }
 #coin-name {
   font-size: 23px;
@@ -69,7 +69,8 @@
 #coin-chart-price {
   box-sizing: border-box;
   /* border:  solid 1px red; */
-  height: 600px;
+  height: 100%;
+  width: 100%;
   margin-left: 1.5rem;
 }
 #chart-title-price {
@@ -87,8 +88,7 @@
   font-weight: 600;
   font-family: Arial, Helvetica, sans-serif;
 }
-#chart-price-timeseries {
-  /* border: solid 1px red; */
+/* #chart-price-timeseries {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -98,9 +98,26 @@
   font-family: Arial, Helvetica, sans-serif;
   color: #5c5f65;
   font-weight: 400;
-}
+} */
 #chart {
   margin-top: 2rem;
   height: 530px;
   margin-right: 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+  #coin-details {
+    background-color: #fefeff;
+    margin-top: 1rem;
+    padding: 3vw;
+  }
+
+  #chart {
+    height: 500px;
+  }
+}
+@media only screen and (min-width: 770px) {
+  #crypto-chart-layout {
+    background-color: #fefeff;
+  }
 }

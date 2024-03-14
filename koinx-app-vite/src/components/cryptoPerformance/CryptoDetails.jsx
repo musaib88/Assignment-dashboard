@@ -21,6 +21,7 @@ export default function CryptoDetails({ coinData }) {
             <span className="label-name-perfor">Todays Low</span>
             <span className="label-price-perfor">
               {/* {coinData?.market_data.low_24h.usd || " "} */}
+              78,9798
             </span>
           </div>
 
@@ -28,17 +29,27 @@ export default function CryptoDetails({ coinData }) {
             <span className="label-name-perfor">Todays High</span>
             <span className="label-price-perfor">
               {/* {coinData?.market_data.high_24h.usd || " "} */}
+              78,9798
             </span>
           </div>
           <div className="color-level-performance">
             <div
               id="performance_currentprice_label"
-              // style={{ left: `${pointerPosition}%` }}
+              style={{
+                position: "relative",
+                textAlign: "center",
+                left: "20%",
+                padding: "5px",
+              }}
             >
               <span>
-                <i className="fa-solid fa-caret-up"></i>
+                <i
+                  className="fa-solid fa-caret-up"
+                  style={{ display: "block" }}
+                ></i>
               </span>
               {/* <span>${coinData?.market_data.current_price.usd}</span> */}
+              <span>$78,9798</span>
             </div>
           </div>
         </div>
