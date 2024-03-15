@@ -2,8 +2,12 @@ import "./cryptoChart.css";
 import TradingViewWidget from "../TradingViewWidget";
 import { useState, memo, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import {  useSelector } from 'react-redux';
+import {selectCoinData} from '../../redux/coinDataSlice'
 
-function CryptoChart({ data }) {
+function CryptoChart() {
+  const data = useSelector(selectCoinData);
+  
   const coinDetails = {
     imgurl: data?.image?.large || "",
     coinName: data?.name || "",

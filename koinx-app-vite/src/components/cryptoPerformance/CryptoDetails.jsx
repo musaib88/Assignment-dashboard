@@ -1,15 +1,22 @@
 import React from "react";
 import "./cryptoDetails.css";
+import {  useSelector } from 'react-redux';
+import { selectCoinData } from "../../redux/coinDataSlice";
 
-export default function CryptoDetails({ coinData }) {
-  console.log(coinData, "this is the data");
-
+export default function CryptoDetails() {
+  const coinData = useSelector(selectCoinData);
+    
   // const pointerPosition =
   //   ((coinData?.market_data.current_price.usd -
   //     coinData?.market_data.low_24h.usd) /
   //     (coinData?.market_data.high_24h.usd -
   //       coinData?.market_data.low_24h.usd)) *
   //   100;
+
+  if (!coinData || !coinData.market_data) {
+    return <div>Loading...</div>;
+  }
+
 
   return (
     <div id="crypto-Details-layout">
@@ -20,16 +27,16 @@ export default function CryptoDetails({ coinData }) {
           <div className="perfor-labels">
             <span className="label-name-perfor">Todays Low</span>
             <span className="label-price-perfor">
-              {/* {coinData?.market_data.low_24h.usd || " "} */}
-              78,9798
+              {coinData?.market_data.low_24h.usd || " "}
+              {/* 78,9798 */}
             </span>
           </div>
 
           <div className="perfor-labels">
             <span className="label-name-perfor">Todays High</span>
             <span className="label-price-perfor">
-              {/* {coinData?.market_data.high_24h.usd || " "} */}
-              78,9798
+              {coinData?.market_data.high_24h.usd || " "}
+              {/* 78,9798 */}
             </span>
           </div>
           <div className="color-level-performance">
@@ -48,8 +55,8 @@ export default function CryptoDetails({ coinData }) {
                   style={{ display: "block" }}
                 ></i>
               </span>
-              {/* <span>${coinData?.market_data.current_price.usd}</span> */}
-              <span>$78,9798</span>
+              <span>${coinData?.market_data.current_price.usd}</span>
+              {/* <span>$78,9798</span> */}
             </div>
           </div>
         </div>
@@ -81,7 +88,7 @@ export default function CryptoDetails({ coinData }) {
               {coinData?.name || "coin Price"} Price
             </span>
             <span className="grid-item-value">
-              {/* ${coinData?.market_data?.current_price?.usd || ""} */}
+              ${coinData?.market_data?.current_price?.usd || ""}
             </span>
           </div>
         </div>
@@ -89,7 +96,7 @@ export default function CryptoDetails({ coinData }) {
           <div className="item-grid-details">
             <span className="grid-item-name">Market Cap</span>
             <span className="grid-item-value">
-              {/* {coinData?.market_data?.market_cap?.usd || "N/A"} */}
+              {coinData?.market_data?.market_cap?.usd || "N/A"}
             </span>
           </div>
         </div>
@@ -97,8 +104,8 @@ export default function CryptoDetails({ coinData }) {
           <div className="item-grid-details">
             <span className="grid-item-name">24h Low / 24h High</span>
             <span className="grid-item-value">
-              {/* ${coinData?.market_data.low_24h.usd || ""} / $ */}
-              {/* {coinData?.market_data.high_24h.usd || "N/A"} */}
+              ${coinData?.market_data.low_24h.usd || ""} / $
+              {coinData?.market_data.high_24h.usd || "N/A"}
             </span>
           </div>
         </div>
@@ -118,10 +125,10 @@ export default function CryptoDetails({ coinData }) {
           <div className="item-grid-details">
             <span className="grid-item-name">Volume / Market Cap</span>
             <span className="grid-item-value">
-              {/* {(
+              {(
                 coinData?.market_data.total_volume.usd /
                 coinData?.market_data?.market_cap?.usd
-              ).toFixed(4)} */}
+              ).toFixed(4)}
             </span>
           </div>
         </div>
@@ -129,7 +136,7 @@ export default function CryptoDetails({ coinData }) {
           <div className="item-grid-details">
             <span className="grid-item-name">Trading Volume</span>
             <span className="grid-item-value">
-              {/* ${coinData?.market_data.total_volume.usd || "N/A"} */}
+              ${coinData?.market_data.total_volume.usd || "N/A"}
             </span>
           </div>
         </div>
@@ -143,7 +150,7 @@ export default function CryptoDetails({ coinData }) {
           <div className="item-grid-details">
             <span className="grid-item-name">Market Cap Rank</span>
             <span className="grid-item-value">
-              {/* #{coinData?.market_cap_rank} */}
+              #{coinData?.market_cap_rank}
             </span>
           </div>
         </div>
