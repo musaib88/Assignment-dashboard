@@ -4,7 +4,6 @@ import Sidebar from "../../components/sidebar/Sidebar";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Trending from "../../components/trending/Trending";
-import { useLocation } from "react-router-dom";
 import { useParams } from "react-router-dom";
 const apiKey = "CG-NSh22jyTDy2EU9gxhsKaNcUa";
 
@@ -48,7 +47,10 @@ export default function Cryptocurrency() {
 
       <div id="crypto-main-content">
         <CryptoDashboard coinName={coinName}></CryptoDashboard>
-        <Sidebar coins={trending.coins}></Sidebar>
+          <div className="sideBar-show-pc" >
+
+          <Sidebar coins={trending.coins} ></Sidebar>
+        </div>
       </div>
       <div id="footer-crousels">
         <Trending
@@ -60,7 +62,10 @@ export default function Cryptocurrency() {
           coins={trending.coins}
         ></Trending>
       </div>
-      <Sidebar></Sidebar>
+      <div id="bottom-phone-sidebar">
+      <Sidebar coins={trending.coins} ></Sidebar>
+      </div>
+
     </div>
   );
 }

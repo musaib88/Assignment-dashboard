@@ -12,12 +12,17 @@
 }
 #footer-crousels {
   /* border: solid 1px red; */
-  /* margin-top: 4rem; */
+  margin-top: 4rem;
   padding-top: 3.5rem;
   background-color: #fefeff;
   padding-bottom: 3rem;
   border-radius: 10px;
-  margin: 0rem 0.3rem;
+}
+
+
+#bottom-phone-sidebar{
+  display: none;
+
 }
 @media only screen and (max-width: 768px) {
   #crypto-main-content {
@@ -27,5 +32,21 @@
   #crypto-title-name {
     padding-top: 0.5rem;
     padding-bottom: 0;
+    
+  }
+  #footer-crousels{
+  margin: 0rem 0.3rem;
+
+      
+  }
+   
+  .sideBar-show-pc{
+    display: none;
+  
+  }
+ 
+  #bottom-phone-sidebar{
+    display: block;
+    padding: 0.5rem;
   }
 }

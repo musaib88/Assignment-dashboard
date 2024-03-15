@@ -83,6 +83,7 @@
   padding-top: 0.8rem;
   /* margin-left: 0.4rem; */
   margin-right: 0.7rem;
+  flex-wrap: wrap;
 }
 #chart-name-title-coin {
   font-weight: 600;
@@ -106,6 +107,8 @@
 }
 
 @media only screen and (max-width: 768px) {
+ 
+  
   #coin-details {
     background-color: #fefeff;
     margin-top: 1rem;
@@ -115,9 +118,13 @@
   #chart {
     height: 500px;
   }
+  #coin-price-usd{
+    font-size: 20px;
+  }
 }
 @media only screen and (min-width: 770px) {
   #crypto-chart-layout {
     background-color: #fefeff;
   }
+  
 }
