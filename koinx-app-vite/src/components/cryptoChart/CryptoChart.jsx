@@ -76,7 +76,7 @@ function CryptoChart() {
             </div>
           </div>
           <div id="chart">
-            <TradingViewWidget symbol={coinSymbol} />
+            <TradingViewWidget symbol={coinDetails?.symbol} />
           </div>
         </div>
       </div>

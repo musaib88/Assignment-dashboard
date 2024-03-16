@@ -1,7 +1,7 @@
 import React from "react";
 import "./sidebar.css";
 import bannerImg from "../../util/bannerAd.png";
-import coinImg from "../../util/Bitcoin.svg.png";
+// import coinImg from "../../util/Bitcoin.svg.png";
 export default function Sidebar({ coins }) {
   const top3 = coins && coins.length > 0 ? coins.slice(0, 4) : [];
   const style = {
@@ -55,7 +55,7 @@ export default function Sidebar({ coins }) {
           <span>Trending Coins (24h)</span>
         </div>
         {mappedData.map((coin, index) => (
-          <div
+           <div
             key={index}
             id='trending-top3-coins-show'>
             <div
