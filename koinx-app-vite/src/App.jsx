@@ -11,13 +11,13 @@ function App() {
         <Navbar />
         <Routes>
           {/* Home route */}
-          <Route path="/" element={<Navigate to="/get/" replace />} />
+          <Route path="*" element={<Navigate to="/get/" replace />} />
 
           {/* Route for cryptocurrency */}
           <Route path="/get/:coin?" element={<Cryptocurrency />} />
 
           {/* Catch-all route for 404 */}
-          <Route path="*" element={<div>Not found 404</div>} />
+          {/* <Route path="*" element={<div>Not found 404</div>} /> */}
         </Routes>
       </>
     </Router>
