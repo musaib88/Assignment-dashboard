@@ -29,7 +29,7 @@ export default function CryptoDashboard({ coinName }) {
         setCoinDataState(response.data); // Used the renamed state setter function
         dispatch(setCoinData(response.data));
 
-        console.log(response.data);
+        // console.log(response.data);
       } catch (error) {
         console.error("Error fetching cryptocurrency data:", error);
       }

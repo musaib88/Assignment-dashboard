@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, memo } from "react";
 
 function TradingViewWidget({ symbol }) {
-  console.log(symbol)
+  // console.log(symbol)
   const container = useRef();
   const chartSymbol = `BINANCE:${symbol.toUpperCase()}USDT|1D`;
-  console.log(chartSymbol);
+  // console.log(chartSymbol);
 
 
 

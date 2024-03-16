@@ -20,9 +20,9 @@ export default function Sidebar({ coins }) {
       thumb,
     };
   });
-  console.log(mappedData, "jjj");
+  // console.log(mappedData, "jjj");
 
-  console.log(top3);
+  // console.log(top3);
   return (
     <div id='sidebar-layout'>
       <div id='koinx-banner'>

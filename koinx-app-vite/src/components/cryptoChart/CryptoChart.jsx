@@ -23,7 +23,7 @@ function CryptoChart() {
   const coinName = bitcoin.slice(1);
   const changeSymbol = () => {
     setCoinSymbol(coinDetails.symbol);
-    console.log(coinDetails.symbol, "in use efft");
+    // console.log(coinDetails.symbol, "in use efft");
   };
   // const path=usePram()
 

@@ -24,7 +24,7 @@ export default function Cryptocurrency() {
           },
         });
         setTrending(response.data);
-        console.log(response.data);
+        // console.log(response.data);
       } catch (error) {
         console.error("Error fetching cryptocurrency data:", error);
       }
