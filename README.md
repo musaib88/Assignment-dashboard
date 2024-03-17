@@ -6,7 +6,7 @@ then run npn dev
 for changing coin simply change coin name at end.
 
 default : http://localhost:5173/get/
-vist : https://boisterous-blancmange-80751a.netlify.app/get/
+visit : https://boisterous-blancmange-80751a.netlify.app/get/
 
 will fetch bitcoin by default 
 
