@@ -5,8 +5,7 @@ then run npn dev
 
 for changing coin simply change coin name at end.
 
-for local enviroment : http://localhost:5173/get/
-for vercel :https://assignment-dashboard-huo6-mrndizm2x-musaib88s-projects.vercel.app/get/
+default : http://localhost:5173/get/
 
 will fetch bitcoin by default 
 
