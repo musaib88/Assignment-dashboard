@@ -6,6 +6,7 @@ import {  useSelector } from 'react-redux';
 import {selectCoinData} from '../../redux/coinDataSlice'
 
 function CryptoChart() {
+  
   const data = useSelector(selectCoinData);
   
   const coinDetails = {
@@ -18,23 +19,16 @@ function CryptoChart() {
     coinPriceChange_24: data?.market_data?.price_change_percentage_24h || 0,
   };
 
-  const [coinSymbol, setCoinSymbol] = useState("btc");
-  const { bitcoin = "bitcoin" } = useParams();
-  const coinName = bitcoin.slice(1);
-  const changeSymbol = () => {
-    setCoinSymbol(coinDetails.symbol);
-    // console.log(coinDetails.symbol, "in use efft");
-  };
-  // const path=usePram()
-
-  useEffect(() => {
-    changeSymbol();
-  }, [coinName]);
-
+  
+  
   const style = {
     priceUp: { backgroundColor: "#EBF9F4", color: "green" },
     priceDown: { backgroundColor: "#f4e5e1", color: "red" },
   };
+
+  if (!coinDetails) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div id="crypto-chart-layout">

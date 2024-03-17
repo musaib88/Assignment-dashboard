@@ -38,12 +38,15 @@ export default function CryptoDashboard({ coinName }) {
     fetchData();
   }, [coinName]);
 
+  
+
   const handleActiveSpan = (index) => {
     setActiveSpan(index);
   };
 
   return (
     <div id="dash-main-layout">
+      
       <CryptoChart ></CryptoChart>
       <div id="dashboard-navigator">
         {/* Navigation spans */}

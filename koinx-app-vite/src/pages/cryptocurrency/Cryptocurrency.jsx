@@ -57,6 +57,6 @@ export default function Cryptocurrency() {
       <div id="bottom-phone-sidebar">
         <Sidebar coins={trending.coins || []}></Sidebar>
       </div>
-    </div>
+    </div> 
   );
 }

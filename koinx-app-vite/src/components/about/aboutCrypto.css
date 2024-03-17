@@ -77,8 +77,8 @@
   display: flex;
   width: 44%;
 
-  align-items: start;
-  justify-content: start;
+  align-items: flex-start;
+  justify-content: flex-start;
   background-color: dodgerblue;
   padding: 1rem;
   border-radius: 5px;
@@ -89,8 +89,8 @@
   width: 44%;
 
   display: flex;
-  align-items: start;
-  justify-content: start;
+  align-items: flex-start;
+  justify-content: flex-start;
   padding: 1rem;
   background-color: orangered;
   border-radius: 5px;
