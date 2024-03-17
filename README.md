@@ -1,7 +1,13 @@
 use cd  koinx-app-vite 
+
 use npm install : to install depenedences  
 
 then run npn dev
+
+#PRODUCTION
+for production you may face issues with router 
+to resolve add vercel.json file  for versal deployment  and netlify.toml for netlify deployment
+same as added in repo 
 
 for changing coin simply change coin name at end.
 
@@ -17,6 +23,8 @@ eg.
 http://localhost:5173/get/gala
 eg: https://boisterous-blancmange-80751a.netlify.app/get/gala
 
+for  more info or issue contact : musaibbashir1700@gmail.com 
+Ph: 7889741630
 
 #screenshots
 
