@@ -1,43 +1,69 @@
-use cd  koinx-app-vite 
+# Koinx App Vite
 
-use npm install : to install depenedences  
+Welcome to Koinx App Vite! This application allows you to fetch cryptocurrency data using the CoinGecko API. It is built using Vite, a blazing fast frontend build tool that provides an extremely fast development experience.
 
-then run npn dev
+## Getting Started
 
-#PRODUCTION
-for production you may face issues with router 
-to resolve add vercel.json file  for versal deployment  and netlify.toml for netlify deployment
-same as added in repo 
+To get started with Koinx App Vite, follow these steps:
 
-for changing coin simply change coin name at end.
+1. Clone this repository to your local machine.
+2. Navigate to the project directory in your terminal using the `cd` command:
 
-default : http://localhost:5173/get/
-visit : https://boisterous-blancmange-80751a.netlify.app/get/
-
-will fetch bitcoin by default 
+   ```bash
+   cd koinx-app-vite
 
 
-to fetch specific coin.
-add coinid at last according to coningeck documentation
-eg.
-http://localhost:5173/get/gala
-eg: https://boisterous-blancmange-80751a.netlify.app/get/gala
+1 Install dependencies using npm:
 
-for  more info or issue contact : musaibbashir1700@gmail.com 
-Ph: 7889741630
-
-#screenshots
+npm install
 
 
-![Screenshot from 2024-03-17 15-11-36](https://github.com/musaib88/Assignment-dashboard/assets/119590812/1410aff8-03ca-4869-9aa5-76135dc894c7)
+2  Once the dependencies are installed, start the development server:
+
+npm run dev
+
+
+Production Deployment
+When deploying the application for production, you may encounter router issues. To resolve these issues, you need to add a configuration file specific to your deployment platform.
+
+For Vercel Deployment
+If you are deploying to Vercel, add a vercel.json file to the root of your project. This file should contain the necessary configuration for Vercel's routing system.
+
+For Netlify Deployment
+If you are deploying to Netlify, add a netlify.toml file to the root of your project. This file should contain the necessary configuration for Netlify's routing system.
+
+Both of these configuration files are already included in this repository for your convenience.
+
+Fetching Cryptocurrency Data
+By default, the application fetches Bitcoin data. To fetch data for a specific cryptocurrency, simply append the coin ID to the end of the URL. You can find the coin IDs in the CoinGecko documentation.
+
+For example:
+
+To fetch Bitcoin data: http://localhost:5173/get/
+To fetch data for another cryptocurrency (e.g., Ethereum): http://localhost:5173/get/ethereum
+
+For more information or to report issues, contact: musaibbashir1700@gmail.com | Ph: 7889741630
+
+Screenshots
+Here are some screenshots of the application:
 
 
 
-![Screenshot from 2024-03-17 15-15-52](https://github.com/musaib88/Assignment-dashboard/assets/119590812/7022941f-5834-4d7f-bd46-23fd57b02de1)
 
-![Screenshot from 2024-03-17 15-16-18](https://github.com/musaib88/Assignment-dashboard/assets/119590812/28e57096-7f74-4873-bb54-6f3c13ae534b)
-![Screenshot from 2024-03-17 15-16-31](https://github.com/musaib88/Assignment-dashboard/assets/119590812/ae39e295-fb7c-4ca1-90f8-195082b6a882)
+## Screenshots
+
+![Screenshot 1](https://github.com/musaib88/Assignment-dashboard/assets/119590812/1410aff8-03ca-4869-9aa5-76135dc894c7)
+
+![Screenshot 2](https://github.com/musaib88/Assignment-dashboard/assets/119590812/7022941f-5834-4d7f-bd46-23fd57b02de1)
+
+![Screenshot 3](https://github.com/musaib88/Assignment-dashboard/assets/119590812/28e57096-7f74-4873-bb54-6f3c13ae534b)
+
+![Screenshot 4](https://github.com/musaib88/Assignment-dashboard/assets/119590812/ae39e295-fb7c-4ca1-90f8-195082b6a882)
+
+![Screenshot 5](https://github.com/musaib88/Assignment-dashboard/assets/119590812/0ef00090-7c99-416f-9109-ed35e2945219)
 
 
 
-![Screenshot from 2024-03-17 15-16-42](https://github.com/musaib88/Assignment-dashboard/assets/119590812/0ef00090-7c99-416f-9109-ed35e2945219)
+
+
+
