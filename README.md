@@ -1,5 +1,7 @@
 # Koinx App Vite
 
+VISIT :  https://boisterous-blancmange-80751a.netlify.app/get/
+
 Welcome to Koinx App Vite! This application allows you to fetch cryptocurrency data using the CoinGecko API. It is built using Vite, a blazing fast frontend build tool that provides an extremely fast development experience.
 
 ## Getting Started
